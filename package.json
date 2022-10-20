@@ -8,28 +8,33 @@
   "scripts": {
     "lint": "eslint --ext .js,.ts,.vue ./",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev -m ssr",
+    "build": "quasar build -m ssr",
+    "start": "node dist/ssr/index.js"
   },
   "dependencies": {
-    "axios": "^0.21.4",
-    "vue-i18n": "^9.2.2",
-    "pinia": "^2.0.23",
     "@quasar/extras": "^1.15.5",
+    "axios": "^0.21.4",
+    "backend": "0.0.1",
+    "pinia": "^2.0.23",
     "quasar": "^2.10.0",
     "vue": "^3.2.41",
+    "vue-i18n": "^9.2.2",
     "vue-router": "^4.1.5"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.1",
-    "eslint": "8.22.0",
-    "eslint-plugin-vue": "^9.6.0",
-    "eslint-config-prettier": "^8.5.0",
-    "prettier": "^2.7.1",
-    "@types/node": "^12.20.55",
     "@intlify/vite-plugin-vue-i18n": "^3.4.0",
     "@quasar/app-vite": "^1.1.3",
+    "@types/compression": "^1.7.2",
+    "@types/node": "^12.20.55",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
     "autoprefixer": "^10.4.12",
+    "eslint": "8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-vue": "^9.6.0",
+    "prettier": "^2.7.1",
     "typescript": "^4.8.4"
   },
   "engines": {
