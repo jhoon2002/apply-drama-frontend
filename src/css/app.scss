@@ -1,1 +1,310 @@
 // app global css in SCSS form
+//@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+@import url('./fonts.scss');
+
+@each $kind in (p: 'padding', m: 'margin') {
+    @each $pos in (a: '', t: '-top', r: '-right', b: '-bottom', l: '-left') {
+        @for $size from 0 to 16 {
+            .j-#{nth($kind, 1)}#{nth($pos, 1)}-#{$size} {
+                #{nth($kind, 2)}#{nth($pos, 2)}: ($size * 4px);
+            }
+        }
+    }
+}
+@each $kind in (p: 'padding', m: 'margin') {
+    @each $pos in (x, y) {
+        @for $size from 0 to 16 {
+            .j-#{nth($kind, 1)}#{$pos}-#{$size} {
+                @if $pos == 'x' {
+                    #{nth($kind, 2)}-left: ($size * 4px);
+                    #{nth($kind, 2)}-right: ($size * 4px);
+                }
+                @if $pos == 'y' {
+                    #{nth($kind, 2)}-top: ($size * 4px);
+                    #{nth($kind, 2)}-bottom: ($size * 4px);
+                }
+            }
+        }
+    }
+}
+.q-field--standard .q-field__control:after {
+    height: 1px;
+}
+.q-field--outlined .q-field__control:after {
+}
+.q-field--outlined.q-field--highlighted .q-field__control:after {
+    border-width: 1px;
+}
+
+kbd {
+    font-family: Consolas, 'Lucida Console', monospace;
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0px 4px;
+    box-shadow: 1px 1px 1px #777;
+    margin: 2px;
+    font-size: small;
+    vertical-align: text-bottom;
+    background: #eee;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    font-variant: small-caps;
+    font-weight: 600;
+
+    /* This two work */
+    /* letter-spacing: 0.5px; */
+    letter-spacing: 1px;
+
+    /* Prevent selection */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+kbd:hover,
+kbd:hover * {
+    color: black;
+    /* box-shadow: 1px 1px 1px #333; */
+}
+kbd:active,
+kbd:active * {
+    color: black;
+    box-shadow: 1px 1px 0px #ddd inset;
+}
+
+kbd kbd {
+    padding: 0px;
+    margin: 0 1px;
+    box-shadow: 0px 0px 0px black;
+    vertical-align: baseline;
+    background: none;
+}
+
+kbd kbd:hover {
+    box-shadow: 0px 0px 0px black;
+}
+
+kbd:active kbd {
+    box-shadow: 0px 0px 0px black;
+    background: none;
+}
+
+/* Deep blue */
+kbd.deep-blue,
+.deep-blue kbd {
+    background: steelblue;
+    color: #eee;
+}
+
+kbd.deep-blue:hover,
+kbd.deep-blue:hover *,
+.deep-blue kbd:hover {
+    color: white;
+}
+
+/* Dark apple */
+kbd.dark-apple,
+.dark-apple kbd {
+    background: black;
+    color: #ddd;
+}
+
+kbd.dark-apple:hover,
+kbd.dark-apple:hover *,
+.dark-apple kbd:hover {
+    color: white;
+}
+
+/* Type writer */
+kbd.type-writer,
+.type-writer kbd {
+    border-radius: 10px;
+    background: #333;
+    color: white;
+}
+
+/* Spinner */
+.j-spinner {
+    align-self: center;
+    opacity: 0;
+    font-size: 5px;
+    text-indent: -9999em;
+    overflow: hidden;
+    border-top: 0.5em solid rgba(100, 100, 100, 0.1);
+    border-right: 0.5em solid rgba(100, 100, 100, 0.1);
+    border-bottom: 0.5em solid rgba(100, 100, 100, 0.1);
+    border-left: 0.5em solid rgba(60, 60, 60, 0.45);
+    transform: translateZ(0);
+    animation: vSelectSpinner 1.1s infinite linear;
+    transition: opacity 0.1s;
+}
+.j-spinner,
+.j-spinner:after {
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+}
+.vs__loading .j-spinner {
+    opacity: 1;
+}
+.j-content-q-card {
+    padding: 24px;
+    box-shadow: 5px 5px 5px;
+}
+.j-link {
+    color: $secondary;
+    padding: 4px;
+}
+.j-link:hover {
+    //background: #fffaf8;
+    text-decoration: underline;
+}
+a.j-link-chip {
+    border-radius: 5px;
+}
+.j-link-chip {
+    color: black;
+    background: $lime-2;
+    padding: 4px;
+    text-decoration: none;
+}
+.j-link-chip:hover {
+    //background: #fffaf8;
+    text-decoration: underline;
+}
+.on-left {
+    margin-right: 5px;
+}
+/*
+.q-drawer__content::-webkit-scrollbar {
+    width: 1px;
+}
+.q-drawer__content::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+    border-radius: 0;
+    background-clip: padding-box;
+    border: 0px solid transparent;
+}
+.q-drawer__content::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+*/
+
+.q-btn.disabled {
+    opacity: 0.4 !important;
+}
+.j-border {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.j-border-top {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+}
+.j-border-bottom {
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: none;
+}
+.j-border-x {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: none;
+}
+.q-table th {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #777777;
+}
+.q-btn.j-btn {
+    min-height: 1.7rem;
+}
+.j-tab-label .q-tab__label,
+.q-tab--active.j-tab-label .q-tab__label {
+    font-size: 1.1rem;
+    //padding: 7px 0 0 0;
+    //font-weight: normal;
+}
+.q-tab--active.j-tab-label .q-tab__label {
+    //font-weight: bold;
+}
+pre {
+    font-family: 'Radio Canada', 'Noto Sans KR', sans-serif;
+    font-size: 0.7rem;
+}
+.q-field__native {
+    font-weight: bold;
+}
+.q-select .q-field__input {
+    min-width: 20px !important;
+}
+.q-checkbox.disabled {
+    opacity: 0.4 !important;
+}
+
+/* <q-input> 에서 error message, hint 에 적용되는 transition */
+.q-transition--field-message-enter-active,
+.q-transition--field-message-leave-active {
+    //transition: transform 6s cubic-bezier(.86,0,.07,1), opacity .6s cubic-bezier(.86,0,.07,1);
+    transition: opacity 0.2s;
+}
+
+.q-transition--field-message-enter-from,
+.q-transition--field-message-leave-to {
+    opacity: 0;
+    transform: translateY(0px);
+}
+
+.q-transition--field-message-leave-from,
+.q-transition--field-message-leave-active {
+    position: absolute;
+}
+.q-chip {
+    /* chip 의 오른쪽 라운드가 살짝 짤리는 버그 수정 */
+    margin: 0px 2px 2px 0px;
+}
+.q-linear-progress.j-progress {
+    height: auto;
+}
+.j-progress .q-linear-progress__track--light {
+    background: transparent;
+}
+.j-width-0 {
+    min-width: 0;
+    width: auto;
+}
+.j-height-0 {
+    min-height: 0;
+    height: auto;
+}
+.j-btn-md {
+    min-width: 0;
+    width: auto;
+    min-height: 0;
+    height: auto;
+    padding: 2px 10px 2px 10px;
+}
+.j-btn-menu {
+    min-width: 0;
+    width: auto;
+    min-height: 0;
+    height: auto;
+    padding: 2px 12px 2px 12px;
+}
+.j-btn-dropdown-menu {
+    min-width: 0;
+    width: auto;
+    min-height: 0;
+    height: auto;
+    padding: 2px 5px 2px 12px;
+}
+.j-btn-menu .q-btn-dropdown__arrow {
+    margin-left: 3px;
+}

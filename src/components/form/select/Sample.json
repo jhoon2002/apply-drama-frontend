@@ -1,0 +1,6 @@
+{
+    "winds": {
+        "type": [String, Boolean],
+        "default": "대한민국"
+    }
+}

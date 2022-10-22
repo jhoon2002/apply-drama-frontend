@@ -1,7 +1,53 @@
 <template>
-    <q-page class="row items-center justify-evenly">
-        <example-component title="Example component" active :todos="todos" :meta="meta"></example-component>
-    </q-page>
+    <!--    <q-page class="row items-center justify-evenly"> 잘 되고 있지요? </q-page>-->
+    <q-card>
+        <q-card-section>
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+            오호라.. <br />
+        </q-card-section>
+    </q-card>
 </template>
 
 <script setup lang="ts">

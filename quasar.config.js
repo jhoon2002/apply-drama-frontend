@@ -55,6 +55,9 @@ module.exports = configure(function (/* ctx */) {
 
         // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
         build: {
+            alias: {
+                '@': path.join(__dirname, './front/src'),
+            },
             target: {
                 browser: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
                 node: 'node16',
@@ -97,13 +100,13 @@ module.exports = configure(function (/* ctx */) {
         devServer: {
             // https: true
             open: true, // opens browser window automatically
-            proxy: {
-                '/api': {
-                    target: 'http://localhost:3000/api',
-                    changeOrigin: true,
-                    rewrite: path => path.replace(/^\/api/, '/api'),
-                },
-            },
+            // proxy: {
+            //     '/api': {
+            //         target: 'http://localhost:3000',
+            //         changeOrigin: true,
+            //         rewrite: path => path.replace(/^\/api/, '/api'),
+            //     },
+            // },
         },
 
         // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework

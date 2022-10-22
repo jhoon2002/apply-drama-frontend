@@ -1,0 +1,12 @@
+{
+    "jsonKind": {
+        "type": "String",
+        "default": "Json 파일"
+    },
+    "jsonOption": {
+        "type": [
+            "Function",
+            "String"
+        ]
+    }
+}
