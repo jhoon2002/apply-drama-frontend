@@ -100,13 +100,13 @@ module.exports = configure(function (/* ctx */) {
         devServer: {
             // https: true
             open: true, // opens browser window automatically
-            // proxy: {
-            //     '/api': {
-            //         target: 'http://localhost:3000',
-            //         changeOrigin: true,
-            //         rewrite: path => path.replace(/^\/api/, '/api'),
-            //     },
-            // },
+            proxy: {
+                '/api': {
+                    target: 'http://localhost:3000',
+                    changeOrigin: true,
+                    rewrite: path => path.replace(/^\/api/, '/api'),
+                },
+            },
         },
 
         // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
